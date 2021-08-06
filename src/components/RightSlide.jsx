@@ -1,6 +1,9 @@
-const RightSlide = ({ slides }) => {
+const RightSlide = ({ slides, transform }) => {
   return (
-    <div className="right-slide">
+    <div
+      className="right-slide"
+      style={{ transform: `translateY(-${transform}px)` }}
+    >
       {slides.length > 0 &&
         slides.map((slide) => (
           <div
@@ -8,7 +11,7 @@ const RightSlide = ({ slides }) => {
             style={{
               backgroundImage: `url("${slide.image}")`,
             }}
-          ></div>
+          />
         ))}
     </div>
   );
